@@ -1,0 +1,39 @@
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+
+    th, td {
+      padding: 0.5rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+      cursor: pointer;
+    }
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

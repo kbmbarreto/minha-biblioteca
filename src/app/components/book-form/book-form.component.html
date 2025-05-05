@@ -1,40 +1,47 @@
-<h2>Cadastrar Novo Livro</h2>
+<div class="container">
+    <h2>📘 Cadastrar Novo Livro</h2>
 
-<form (ngSubmit)="saveBook()">
-  <label>
-    Título:
-    <input type="text" [(ngModel)]="book.title" name="title" required />
-  </label>
+    <form (ngSubmit)="saveBook()">
+        <div class="form-group">
+            <label for="title">Título:</label>
+            <input id="title" type="text" [(ngModel)]="book.title" name="title" required />
+        </div>
 
-  <label>
-    Autor:
-    <input type="text" [(ngModel)]="book.author" name="author" required />
-  </label>
+        <div class="form-group">
+            <label for="author">Autor:</label>
+            <input id="author" type="text" [(ngModel)]="book.author" name="author" required />
+        </div>
 
-  <label>
-    Ano:
-    <input type="number" [(ngModel)]="book.year" name="year" required />
-  </label>
+        <div class="form-group">
+            <label for="year">Ano:</label>
+            <input id="year" type="number" [(ngModel)]="book.year" name="year" required />
+        </div>
 
-  <label>
-    Editora:
-    <input type="text" [(ngModel)]="book.publishingCompany" name="publishingCompany" required />
-  </label>
+        <div class="form-group">
+            <label for="publishingCompany">Editora:</label>
+            <input id="publishingCompany" type="text" [(ngModel)]="book.publishingCompany" name="publishingCompany" required />
+        </div>
 
-  <label>
-    Caminho da Capa:
-    <input type="text" [(ngModel)]="book.cover" name="cover" />
-  </label>
+        <div class="form-group">
+            <label for="cover">Caminho da Capa:</label>
+            <input id="cover" type="text" [(ngModel)]="book.cover" name="cover" />
+        </div>
 
-  <label>
-    <input type="checkbox" [(ngModel)]="book.isReaded" name="isReaded" />
-    Já foi lido?
-  </label>
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" [(ngModel)]="book.isReaded" name="isReaded" />
+                Já foi lido?
+            </label>
 
-  <label>
-    <input type="checkbox" [(ngModel)]="book.isDigital" name="isDigital" />
-    É digital?
-  </label>
+            <label>
+                <input type="checkbox" [(ngModel)]="book.isDigital" name="isDigital" />
+                É digital?
+            </label>
+        </div>
 
-  <button type="submit">Salvar</button>
-</form>
+        <div class="actions">
+            <button type="submit">💾 Salvar</button>
+            <button type="button" (click)="cancel()">Cancelar</button>
+        </div>
+    </form>
+</div>

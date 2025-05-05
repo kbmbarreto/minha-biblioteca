@@ -1,28 +1,36 @@
-<h1>📚 Minha Biblioteca</h1>
-<input type="text" placeholder="Buscar livro..." [(ngModel)]="search" />
+<div class="container">
+    <h1>📚 Minha Biblioteca</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Título</th>
-      <th>Autor</th>
-      <th>Ano</th>
-      <th>Editora</th>
-      <th>Lido?</th>
-      <th>Digital?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let book of filteredBooks">
-      <td>{{ book.title }}</td>
-      <td>{{ book.author }}</td>
-      <td>{{ book.year }}</td>
-      <td>{{ book.publishingCompany }}</td>
-      <td>{{ book.isReaded ? 'Sim' : 'Não' }}</td>
-      <td>{{ book.isDigital ? 'Sim' : 'Não' }}</td>
-    </tr>
-    <tr *ngFor="let book of filteredBooks" (click)="openDetails(book)" style="cursor:pointer"></tr>
-  </tbody>
-</table>
+    <input type="text" [(ngModel)]="search" placeholder="Buscar livro..." />
 
-<button [routerLink]="['/cadastrar']">Cadastrar Novo Livro</button>
+    <table>
+        <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Ano</th>
+            <th>Editora</th>
+            <th>Lido?</th>
+            <th>Digital?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of filteredBooks" (click)="openDetails(book)">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.year }}</td>
+            <td>{{ book.publishingCompany }}</td>
+            <td>{{ book.isReaded ? 'Sim' : 'Não' }}</td>
+            <td>{{ book.isDigital ? 'Sim' : 'Não' }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button [routerLink]="['/cadastrar']">Cadastrar Novo Livro</button>
+
+    <app-book-details
+            [book]="selectedBook"
+            [show]="showDetails"
+            [onClose]="closeDetails.bind(this)">
+    </app-book-details>
+</div>
