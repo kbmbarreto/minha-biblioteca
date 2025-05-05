@@ -1,0 +1,22 @@
+<div class="modal" *ngIf="show">
+    <div class="modal-content">
+      <span class="close" (click)="onClose()">×</span>
+      <h2>{{ book?.title }}</h2>
+      <p><strong>Autor:</strong> {{ book?.author }}</p>
+      <p><strong>Editora:</strong> {{ book?.publishingCompany }}</p>
+      <p><strong>Ano:</strong> {{ book?.year }}</p>
+      <p><strong>Lido:</strong> {{ book?.isReaded ? 'Sim' : 'Não' }}</p>
+      <p><strong>Digital:</strong> {{ book?.isDigital ? 'Sim' : 'Não' }}</p>
+      <p><strong>Última atualização:</strong> {{ book?.updatedDate | date:'short' }}</p>
+      
+      <div *ngIf="book?.cover">
+        <img [src]="book?.cover" alt="Capa do livro" class="cover-image" />
+      </div>
+    </div>
+  </div>
+
+  <app-book-details
+  [book]="selectedBook"
+  [show]="showDetails"
+  [onClose]="closeDetails.bind(this)">
+</app-book-details>

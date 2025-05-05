@@ -1,0 +1,40 @@
+<h2>Cadastrar Novo Livro</h2>
+
+<form (ngSubmit)="saveBook()">
+  <label>
+    Título:
+    <input type="text" [(ngModel)]="book.title" name="title" required />
+  </label>
+
+  <label>
+    Autor:
+    <input type="text" [(ngModel)]="book.author" name="author" required />
+  </label>
+
+  <label>
+    Ano:
+    <input type="number" [(ngModel)]="book.year" name="year" required />
+  </label>
+
+  <label>
+    Editora:
+    <input type="text" [(ngModel)]="book.publishingCompany" name="publishingCompany" required />
+  </label>
+
+  <label>
+    Caminho da Capa:
+    <input type="text" [(ngModel)]="book.cover" name="cover" />
+  </label>
+
+  <label>
+    <input type="checkbox" [(ngModel)]="book.isReaded" name="isReaded" />
+    Já foi lido?
+  </label>
+
+  <label>
+    <input type="checkbox" [(ngModel)]="book.isDigital" name="isDigital" />
+    É digital?
+  </label>
+
+  <button type="submit">Salvar</button>
+</form>
