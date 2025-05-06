@@ -32,8 +32,29 @@
   }
 
   button {
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-weight: bold;
     cursor: pointer;
+  }
+
+  .table-wrapper {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  /* Ajuste opcional para manter cabeçalho visível enquanto rola */
+  .table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-wrapper thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    z-index: 1;
   }
 }

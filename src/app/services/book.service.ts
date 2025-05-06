@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'http://localhost:8000/books'; // FastAPI virá aqui
+  private apiUrl = 'http://192.168.15.24:8000/books'; // FastAPI virá aqui
 
   constructor(private http: HttpClient) {}
 
